@@ -1,0 +1,16 @@
+.backoffice {
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px;
+  }
+
+  .backofficeItems {
+    background-color: rgba(0, 0, 255, 0.05);
+  }
+}
