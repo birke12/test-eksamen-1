@@ -11,7 +11,7 @@ const PageHeader = () => {
       <div className={styles.overlay}></div>
       <div className={styles.gradient}></div>
       <div className={styles.content}>
-        <span className={styles.subtitle}>CINESTAR STUDIO</span>
+        <p className={styles.subtitle}>CINESTAR STUDIO</p>
         <h1>
           FILM & TV <br />
           <span className={styles.highlight}>PRODUKTION</span>

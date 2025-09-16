@@ -1,0 +1,32 @@
+.awardsSection {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.awardsImages {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 90px;
+  margin-bottom: 60px;
+}
+
+.awardsImages img {
+  width: 220px;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+@media (min-width: 768px) {
+  .awardsImages {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
