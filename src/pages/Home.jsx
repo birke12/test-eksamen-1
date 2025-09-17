@@ -4,6 +4,9 @@ import VideoSection from "../components/videoSection/VideoSection";
 import ServiceSection from "../components/services/Services";
 import Portfolio from "../components/portfolio/Portfolio";
 import HistoryOff from "../components/historyOff/HistoryOff";
+import Reviews from "../components/reviews/Reviews";
+import Contact from "../components/contact/Contact";
+import FrontBlog from "../components/frontBlog.jsx/FrontBlog";
 
 const Home = () => {
   return (
@@ -14,6 +17,9 @@ const Home = () => {
       <Portfolio />
       <ServiceSection />
       <HistoryOff />
+      <Reviews />
+      <Contact />
+      <FrontBlog />
     </section>
   );
 };

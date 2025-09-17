@@ -1,0 +1,18 @@
+.blogImage {
+  max-width: 100% !important;
+  display: block;
+  margin: 0 auto;
+}
+
+.blogTitle {
+  font-size: 1.5rem;
+  color: #f07232;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.blogTeaser {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}

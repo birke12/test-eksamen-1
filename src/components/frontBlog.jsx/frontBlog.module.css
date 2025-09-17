@@ -1,0 +1,25 @@
+.frontBlogSection {
+  padding: 2rem 1rem;
+  background: #181818;
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #f07232;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.text {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #ddd;
+}
