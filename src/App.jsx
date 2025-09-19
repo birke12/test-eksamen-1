@@ -1,31 +1,18 @@
 import { useLocation, useRoutes } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
-/* import Shop from "./pages/Shop";
-import Services from "./pages/Services";
-import Backoffice from "./pages/backoffice/Backoffice";
-import ProtectedRoute from "./components/ProtectedRoute";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Checkout from "./pages/Checkout"; */
+import BlogPages from "./pages/BlogPages";
+import BlogDetails from "./components/blogDetails/BlogDetails";
+import BackofficeBlogs from "./pages/backoffice/Backoffice";
+import Faq from "./pages/FaqPage";
 
 function App() {
   const routes = useRoutes([
     { path: "/", element: <Home /> },
-    /*  { path: "/shop", element: <Shop /> },
-    { path: "/services", element: <Services /> },
-    { path: "/om", element: <About /> },
-    { path: "/contact", element: <Contact /> },
-    { path: "/checkout", element: <Checkout /> }, */
-    /* Backoffice kan kun tilgås for brugere med admin-rolle */
-    /*   {
-      path: "/backoffice",
-      element: (
-        <ProtectedRoute requiredRole="admin">
-          <Backoffice />
-        </ProtectedRoute>
-      ),
-    }, */
+    { path: "/blogPages", element: <BlogPages /> },
+    { path: "/blogs/:id", element: <BlogDetails /> },
+    { path: "/backoffice", element: <BackofficeBlogs /> },
+    { path: "/faq", element: <Faq /> },
   ]);
 
   return (

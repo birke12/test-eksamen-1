@@ -1,6 +1,6 @@
 import React from "react";
+import Blogs from "../blogs/Blogs";
 import styles from "./frontBlog.module.css";
-import Blogs from "./../blogs/Blogs";
 
 const FrontBlog = () => (
   <section className={styles.frontBlogSection}>

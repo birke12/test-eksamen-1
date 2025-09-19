@@ -1,0 +1,47 @@
+.faqContainer {
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: sans-serif;
+}
+
+.header {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.accordionItem {
+  background-color: #ff7f00;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  color: white;
+}
+
+.accordionButton {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.accordionContent {
+  background-color: #fff;
+  color: #333;
+  padding: 1rem;
+  display: none;
+}
+
+.accordionContent.open {
+  display: block;
+}

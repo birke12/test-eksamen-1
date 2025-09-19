@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Navigation = () => {
@@ -25,20 +26,26 @@ const Navigation = () => {
         <div className={`nav-overlay ${isOpen ? "active" : ""}`}>
           <ul className="nav-links">
             <li>
-              <a href="#home" onClick={toggleMenu}>
+              <Link to="/" onClick={toggleMenu}>
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#movies" onClick={toggleMenu}>
-                Movies
-              </a>
+              <Link to="/blogPages" onClick={toggleMenu}>
+                Blogs
+              </Link>
             </li>
             <li>
-              <a href="#about" onClick={toggleMenu}>
-                About
-              </a>
+              <Link to="/backoffice" onClick={toggleMenu}>
+                Backoffice
+              </Link>
             </li>
+            <li>
+              <Link to="/faq" onClick={toggleMenu}>
+                FAQ
+              </Link>
+            </li>
+
             <li>
               <a href="#contact" onClick={toggleMenu}>
                 Contact
