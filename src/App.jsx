@@ -2,7 +2,7 @@ import { useLocation, useRoutes } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import BlogPages from "./pages/BlogPages";
-import BlogDetails from "./components/blogDetails/BlogDetails";
+import BlogDetails from "./pages/BlogDetails";
 import BackofficeBlogs from "./pages/backoffice/Backoffice";
 import Faq from "./pages/FaqPage";
 

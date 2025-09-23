@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+/* import { useState, useEffect } from "react";
 
 const useFetchReviews = (url) => {
   const [reviews, setReviews] = useState([]);
@@ -27,3 +27,4 @@ const useFetchReviews = (url) => {
 };
 
 export default useFetchReviews;
+ */

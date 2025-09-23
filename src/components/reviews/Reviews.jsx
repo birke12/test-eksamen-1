@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReviewCard from "../reviewCards/ReviewCard";
 import styles from "./Reviews.module.css";
-import useFetchReviews from "../../hooks/useFetchReviews";
+import useFetch from "../../hooks/useFetch";
 
 const Reviews = () => {
-  const { reviews, loading, error } = useFetchReviews(
-    "http://localhost:3042/reviews"
-  );
+  const { get, error, isLoading } = useFetch();
+  const [reviews, setReviews] = useState([]);
   const [centerIdx, setCenterIdx] = useState(0);
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await get.reviews(); // full response
+        setReviews(response.data); // ✅ use response.data
+      } catch (err) {
+        console.error("Error fetching reviews:", err);
+      }
+    };
+
+    fetchReviews();
+  }, []);
 
   const prevCard = () => {
     setCenterIdx((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
@@ -17,13 +29,14 @@ const Reviews = () => {
     setCenterIdx((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
   };
 
-  if (loading) return <p>Henter anmeldelser...</p>;
+  if (isLoading) return <p>Henter anmeldelser...</p>;
   if (error) return <p>{error}</p>;
   if (reviews.length === 0) return <p>Ingen anmeldelser endnu.</p>;
 
   const getCards = () => {
-    if (reviews.length < 3)
+    if (reviews.length < 3) {
       return reviews.map((rev, idx) => ({ ...rev, pos: idx }));
+    }
     const leftIdx = (centerIdx - 1 + reviews.length) % reviews.length;
     const rightIdx = (centerIdx + 1) % reviews.length;
     return [
@@ -43,9 +56,11 @@ const Reviews = () => {
       </div>
 
       <div className={styles.carousel}>
-        <button className={`${styles.arrow} ${styles.left}`} onClick={prevCard}>
-          &lt;
-        </button>
+        <div className={styles.arrowContainer}>
+          <button className={`${styles.arrow} ${styles.left}`} onClick={prevCard}>
+            &lt;
+          </button>
+        </div>
 
         <div className={styles.cardsWrapper}>
           {getCards().map((rev, idx) => (

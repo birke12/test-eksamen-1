@@ -1,14 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import useFetchBlogs from "../../hooks/useFetchBlogs";
+import useFetch from "../../hooks/useFetch";
 import styles from "./blogs.module.css";
 
 const Blogs = ({ limit, showDescription = false }) => {
-  const { data: blogs, isLoading, error, getBlogs } = useFetchBlogs();
+  const { get, isLoading, error } = useFetch();
+  const [blogs, setBlogs] = useState([]);
 
-  useEffect(() => {
-    getBlogs("http://localhost:3042/blogs");
-  }, []);
+useEffect(() => {
+  const fetchBlogs = async () => {
+    try {
+      const blogsData = await get.blogs();
+      // If API returns { data: [...] }
+      setBlogs(Array.isArray(blogsData) ? blogsData : blogsData.data || []);
+    } catch (err) {
+      console.error("Error fetching blogs:", err);
+      setBlogs([]); // fallback to avoid breaking slice
+    }
+  };
+
+  fetchBlogs();
+}, []);
+
 
   if (isLoading) return <p>Henter blogs...</p>;
   if (error) return <p>{error}</p>;

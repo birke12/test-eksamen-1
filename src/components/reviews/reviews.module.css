@@ -34,7 +34,6 @@
   text-align: center;
 }
 
-
 .carousel {
   display: flex;
   align-items: center;
@@ -42,7 +41,7 @@
   position: relative;
   gap: 1rem;
   width: 100%;
-  max-width: 960px; 
+  max-width: 960px;
   overflow: hidden;
   padding: 1rem 0;
 }
@@ -72,6 +71,15 @@
 }
 
 
+/* .arrowContainer {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+} */
+
 .arrow {
   position: absolute;
   top: 50%;
@@ -82,20 +90,20 @@
   color: #ff6a3d;
   cursor: pointer;
   z-index: 10;
-  padding: 0 0.5rem;
-  background-color: transparent;
+ 
+
+  
 }
 
 .left {
-  left: 0;
+  left: -120px;
 }
 
 .right {
-  right: 0;
+  right: -120px;
 }
 
-
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .cardLeft,
   .cardRight {
     flex: 0 0 30%;
@@ -104,9 +112,9 @@
   .cardCenter {
     flex: 0 0 40%;
   }
-}
+} */
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .cardLeft,
   .cardRight {
     display: none;
@@ -114,4 +122,4 @@
   .cardCenter {
     flex: 0 0 80%;
   }
-}
+} */

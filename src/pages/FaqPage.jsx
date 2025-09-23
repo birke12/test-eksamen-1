@@ -1,10 +1,10 @@
-// FaqPage.jsx
+
 import { useState } from "react";
-import useFetchFaq from "../hooks/useFetchFaq"; // fixed default import
+import useFetchFaq from "../hooks/useFetch"; 
 import styles from "../style/faqPage.module.css";
 
 const Faq = () => {
-  const { faq, loading, error } = useFetchFaq("/api/faq"); // make sure to pass the correct URL
+  const { faq, loading, error } = useFetchFaq("/api/faq"); 
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleAccordion = (index) => {
